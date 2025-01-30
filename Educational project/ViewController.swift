@@ -20,11 +20,6 @@ class ViewController: UIViewController {
         label.frame = CGRect(x: 100, y: 100, width: 200, height: 50)
         view.addSubview(label)
 
-        let imageView = UIImageView()
-        imageView.frame = CGRect(x: 50, y: 220, width: 300, height: 300)
-        imageView.image = UIImage(named: "cosmos-atom-logo")
-        imageView.contentMode = .scaleAspectFit
-        view.addSubview(imageView);
 
     }
 }

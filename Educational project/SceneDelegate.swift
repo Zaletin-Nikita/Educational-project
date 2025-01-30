@@ -18,8 +18,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.frame = UIScreen.main.bounds
 
         // Устанавливаем главный экран
-        let viewController = ViewController() // Это ваш основной экран
-        window?.rootViewController = viewController
+        let splashViewController = SplashViewController()  // Экран загрузки
+        window?.rootViewController = splashViewController
 
         // Делаем окно видимым
         window?.makeKeyAndVisible()
