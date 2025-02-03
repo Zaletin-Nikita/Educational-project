@@ -48,16 +48,6 @@
 			path = "Educational project";
 			sourceTree = "<group>";
 		};
-		0A4F6B842D4AB30D002F8FCC /* Educational projectTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "Educational projectTests";
-			sourceTree = "<group>";
-		};
-		0A4F6B8E2D4AB30D002F8FCC /* Educational projectUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "Educational projectUITests";
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,8 +79,6 @@
 			isa = PBXGroup;
 			children = (
 				0A4F6B6D2D4AB30B002F8FCC /* Educational project */,
-				0A4F6B842D4AB30D002F8FCC /* Educational projectTests */,
-				0A4F6B8E2D4AB30D002F8FCC /* Educational projectUITests */,
 				0A4F6B6C2D4AB30B002F8FCC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -144,9 +132,6 @@
 			dependencies = (
 				0A4F6B832D4AB30D002F8FCC /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				0A4F6B842D4AB30D002F8FCC /* Educational projectTests */,
-			);
 			name = "Educational projectTests";
 			packageProductDependencies = (
 			);
@@ -166,9 +151,6 @@
 			);
 			dependencies = (
 				0A4F6B8D2D4AB30D002F8FCC /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				0A4F6B8E2D4AB30D002F8FCC /* Educational projectUITests */,
 			);
 			name = "Educational projectUITests";
 			packageProductDependencies = (
