@@ -20,15 +20,12 @@ class SplashViewController: UIViewController {
     
     private func initializeUIComponents(){
         // Лейбл
-        
         label.text = "CryptoLab"
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 24, weight: .black)
         label.translatesAutoresizingMaskIntoConstraints = false
  
-        
         //Логотип
-        
         logo.image = UIImage(named: "osmosis-osmo-logo.png")
         logo.translatesAutoresizingMaskIntoConstraints = false
 
@@ -51,7 +48,5 @@ class SplashViewController: UIViewController {
             logo.widthAnchor.constraint(equalToConstant: 200),
             logo.heightAnchor.constraint(equalToConstant: 200)
         ])
-        
     }
-    
 }
