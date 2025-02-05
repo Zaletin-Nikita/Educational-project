@@ -13,16 +13,18 @@ class SplashViewController: UIViewController {
         view.backgroundColor = .white
         setupUI()
     }
+    var label = UILabel()
+    var logo = UIImageView(image: UIImage(named: "cosmos-atom-logo.svg"))
     
     private func setupUI() {
-        var label = UILabel()
+        
         label.text = "CryptoLab"
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 24, weight: .black)
         label.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(label)
         
-        var logo = UIImageView(image: UIImage(named: "cosmos-atom-logo.svg"))
+
         logo.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(logo)
         
