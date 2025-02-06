@@ -13,6 +13,7 @@ class SplashViewController: UIViewController {
         super.viewDidLoad()
         initializeUIComponents()
         setupUI()
+        animateLogo()
     }
     
     private var label = UILabel()
@@ -24,11 +25,11 @@ class SplashViewController: UIViewController {
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 24, weight: .black)
         label.translatesAutoresizingMaskIntoConstraints = false
- 
+        
         //Логотип
         logo.image = UIImage(named: "osmosis-osmo-logo.png")
         logo.translatesAutoresizingMaskIntoConstraints = false
-
+        
     }
     
     private func setupUI() {
@@ -37,7 +38,7 @@ class SplashViewController: UIViewController {
         view.addSubview(label)
         view.addSubview(logo)
         
-        // Констрейты 
+        // Констрейты
         NSLayoutConstraint.activate([
             label.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 60),
             label.centerXAnchor.constraint(equalTo: view.centerXAnchor)
@@ -48,5 +49,17 @@ class SplashViewController: UIViewController {
             logo.widthAnchor.constraint(equalToConstant: 200),
             logo.heightAnchor.constraint(equalToConstant: 200)
         ])
+    }
+    
+    private func animateLogo (){
+        logo.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+        logo.alpha = 0
+        
+        UIView.animate(withDuration: 1.5, delay: 0, options: .curveEaseOut, animations: {
+            self.logo.transform = CGAffineTransform(scaleX: 1, y: 1)
+            self.logo.alpha = 1
+            self.logo.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 7)
+        })
+        
     }
 }
