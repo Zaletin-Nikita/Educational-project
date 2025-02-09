@@ -52,6 +52,8 @@ class SplashViewController: UIViewController {
     }
     
     private func animateLogo (){
+        
+        // ВОТ ТУТ +- ПОНЯТНО НО СОЖНО ЗАПОМНИТЬ 
         logo.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
         logo.alpha = 0
         
@@ -59,7 +61,17 @@ class SplashViewController: UIViewController {
             self.logo.transform = CGAffineTransform(scaleX: 1, y: 1)
             self.logo.alpha = 1
             self.logo.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 7)
-        })
-        
+        }) { _ in
+            
+            // ВОТ ТУТ ПОКА НЕ ПОНЯТНО 
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1){
+                let walletVC = WalletViewController()
+                walletVC.modalTransitionStyle = .crossDissolve
+                walletVC.modalPresentationStyle = .fullScreen
+                self.present(walletVC, animated: true, completion: nil)
+            }
+            
+        }
+    
     }
 }
