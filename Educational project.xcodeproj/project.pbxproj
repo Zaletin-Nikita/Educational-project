@@ -48,16 +48,6 @@
 			path = "Educational project";
 			sourceTree = "<group>";
 		};
-		0A4F6B842D4AB30D002F8FCC /* Educational projectTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "Educational projectTests";
-			sourceTree = "<group>";
-		};
-		0A4F6B8E2D4AB30D002F8FCC /* Educational projectUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "Educational projectUITests";
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,8 +79,6 @@
 			isa = PBXGroup;
 			children = (
 				0A4F6B6D2D4AB30B002F8FCC /* Educational project */,
-				0A4F6B842D4AB30D002F8FCC /* Educational projectTests */,
-				0A4F6B8E2D4AB30D002F8FCC /* Educational projectUITests */,
 				0A4F6B6C2D4AB30B002F8FCC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -144,9 +132,6 @@
 			dependencies = (
 				0A4F6B832D4AB30D002F8FCC /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				0A4F6B842D4AB30D002F8FCC /* Educational projectTests */,
-			);
 			name = "Educational projectTests";
 			packageProductDependencies = (
 			);
@@ -166,9 +151,6 @@
 			);
 			dependencies = (
 				0A4F6B8D2D4AB30D002F8FCC /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				0A4F6B8E2D4AB30D002F8FCC /* Educational projectUITests */,
 			);
 			name = "Educational projectUITests";
 			packageProductDependencies = (
@@ -209,6 +191,9 @@
 			);
 			mainGroup = 0A4F6B622D4AB30B002F8FCC;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				0A5080712D53AC4800D76FE0 /* XCRemoteSwiftPackageReference "SwiftSVG" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 0A4F6B6C2D4AB30B002F8FCC /* Products */;
 			projectDirPath = "";
@@ -570,6 +555,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0A5080712D53AC4800D76FE0 /* XCRemoteSwiftPackageReference "SwiftSVG" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mchoe/SwiftSVG.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 0A4F6B632D4AB30B002F8FCC /* Project object */;
 }
