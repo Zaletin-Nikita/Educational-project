@@ -6,72 +6,72 @@
 //
 
 import UIKit
-
+import SnapKit
 
 class SplashViewController: UIViewController {
+    
+    // MARK: - Properties
+    
+    private lazy var label: UILabel = {
+        let label = UILabel()
+        label.text = NSLocalizedString("logo_text", comment: "")
+        label.textColor = UIConstants.Colors.textColor
+        label.font = UIConstants.Fonts.titleH1
+        return label
+        
+        
+    }()
+    
+    private lazy var logo: UIImageView = {
+        let logo = UIImageView()
+        logo.image =  UIConstants.MainLogo.logo
+        return logo
+    }()
+
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        initializeUIComponents()
         setupUI()
         animateLogo()
     }
     
-    private var label = UILabel()
-    private var logo = UIImageView()
-    
-    private func initializeUIComponents(){
-        // Лейбл
-        label.text = "CryptoLab"
-        label.textColor = .black
-        label.font = UIFont.systemFont(ofSize: 24, weight: .black)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        
-        //Логотип
-        logo.image = UIImage(named: "osmosis-osmo-logo.png")
-        logo.translatesAutoresizingMaskIntoConstraints = false
-        
-    }
+    // MARK: - UI
     
     private func setupUI() {
-        view.backgroundColor = .white
-        // Доболение элементов
-        view.addSubview(label)
-        view.addSubview(logo)
+        view.backgroundColor = UIConstants.Colors.primaryBackground
         
-        // Констрейты
-        NSLayoutConstraint.activate([
-            label.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 60),
-            label.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-        ])
-        NSLayoutConstraint.activate([
-            logo.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            logo.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            logo.widthAnchor.constraint(equalToConstant: 200),
-            logo.heightAnchor.constraint(equalToConstant: 200)
-        ])
+        // Adding elements
+        view.addSubview(label)
+        label.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide).offset(UIConstants.ConstantMargin.xl)
+            $0.centerX.equalToSuperview()
+        }
+        
+        view.addSubview(logo)
+        logo.snp.makeConstraints{
+            $0.centerX.equalToSuperview()
+            $0.centerY.equalToSuperview()
+            $0.width.equalTo(UIConstants.MainLogo.Size.width)
+            $0.height.equalTo(UIConstants.MainLogo.Size.height)
+        }
     }
     
-    private func animateLogo (){
+    // MARK: - Animations
+    
+    private func animateLogo() {
+        logo.transform = CGAffineTransform(scaleX: UIConstants.AnimationConstants.initialScale, y: UIConstants.AnimationConstants.initialScale)
         
-        // ВОТ ТУТ +- ПОНЯТНО НО СОЖНО ЗАПОМНИТЬ 
-        logo.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
-        logo.alpha = 0
-        
-        UIView.animate(withDuration: 1.5, delay: 0, options: .curveEaseOut, animations: {
-            self.logo.transform = CGAffineTransform(scaleX: 1, y: 1)
-            self.logo.alpha = 1
-            self.logo.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 7)
+        UIView.animate(withDuration: UIConstants.AnimationConstants.fadeInDuration, delay: UIConstants.AnimationConstants.animationDelay, options: .curveEaseOut, animations: {
+            self.logo.transform = CGAffineTransform(scaleX: UIConstants.AnimationConstants.finalScale, y: UIConstants.AnimationConstants.finalScale)
+            self.logo.transform = CGAffineTransform(rotationAngle: UIConstants.AnimationConstants.rotationAngle)
         }) { _ in
-            
-            // ВОТ ТУТ ПОКА НЕ ПОНЯТНО 
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1){
+            DispatchQueue.main.asyncAfter(deadline: .now()){
                 let walletVC = WalletViewController()
                 walletVC.modalTransitionStyle = .crossDissolve
                 walletVC.modalPresentationStyle = .fullScreen
                 self.present(walletVC, animated: true, completion: nil)
             }
-            
         }
-    
     }
 }

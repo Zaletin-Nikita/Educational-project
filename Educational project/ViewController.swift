@@ -25,7 +25,7 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     private func setupUI(){
-        view.backgroundColor = .white
+        view.backgroundColor = UIConstants.Colors.primaryBackground
         view.addSubview(tableView)
         view.addSubview(headerView)
         view.addSubview(walletTitleLabel)
@@ -122,7 +122,7 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         NSLayoutConstraint.activate([
             nameLabel.centerYAnchor.constraint(equalTo: content.centerYAnchor),
-            nameLabel.leadingAnchor.constraint(equalTo: content.leadingAnchor, constant: 15)
+            nameLabel.leadingAnchor.constraint(equalTo: content.leadingAnchor)
         ])
         
         let valueLabel = UILabel()
